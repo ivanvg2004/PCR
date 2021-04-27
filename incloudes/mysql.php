@@ -14,6 +14,4 @@ $bbdd=mysqli_connect($database,$user,$pass,$name);
     echo "error query";
     print(mysqli_error($bbdd));
     }
-
-    <select name=FK_DNI_Pacient
     ?>
