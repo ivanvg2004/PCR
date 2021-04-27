@@ -5,8 +5,8 @@
   <?php require"incloudes/header.php";?>
   <form action="insert_api_PCR.php" method="GET">
   <div>
-  <label>DNI Pacient</label>
-  <input type="text" maxlenght="15"required name="DNI"/>
+  <label>Metge</label>
+  <input type="text" maxlenght="55"required name="Nom"/>
   <button type="submit">Enviar</button>
   </div>
   <div>
