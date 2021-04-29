@@ -5,16 +5,23 @@
   <?php require"incloudes/header.php";?>
   <form action="insert_api_PCR.php" method="GET">
   <div>
-  <label>Metge</label>
-  <input type="text" maxlenght="55"required name="Nom"/>
-  <button type="submit">Enviar</button>
+  <label>ID</label>
+  <select name="ID">
+  <option value=""selected></option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  </select>
   </div>
   <div>
-  <label>Positiu</label>
-  <select name="Positiu">
-  <option value="Sí">Sí</option>
-  <option value="No" selected>No</option>
-  </select>
+  <button type="submit">Enviar</button>
   </div>
   </form>
   </body>
