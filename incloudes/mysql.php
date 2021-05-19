@@ -2,7 +2,7 @@
 $database="localhost";
 $user="root";
 $pass="";
-$name="PCR";
+$name="COVID";
 $bbdd=mysqli_connect($database,$user,$pass,$name);
     if($bbdd==false){
         echo"No hi ha connexió a...";

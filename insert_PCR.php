@@ -5,12 +5,15 @@
   <?php require"incloudes/header.php";?>
   <form action="insert_api_PCR.php" method="GET">
   <div>
-  <label>PCR</label>
-  <select name="PCR">
+  <label>Prueba</label>
+  <select name="Positiu">
   <option value=""selected></option>
-  <option value="Positivo">Positivo</option>
-  <option value="Negativo">Negativo</option>
+  <option value="Positiva">Positivo</option>
+  <option value="Negativa">Negativo</option>
   </select>
+  <label>Nom</label> 
+  <input name="Nom" type="text" maxlenght="50" requirep>
+
   </div>
   <div>
   <button type="submit">Enviar</button>
