@@ -11,9 +11,8 @@
   <option value="Positiva">Positivo</option>
   <option value="Negativa">Negativo</option>
   </select>
-  <label>Nom</label> 
-  <input name="Nom" type="text" maxlenght="50" requirep>
-
+  <label>DNI</label> 
+  <input name="DNI_Pacient" type="text" maxlenght="10" requirep>
   </div>
   <div>
   <button type="submit">Enviar</button>
