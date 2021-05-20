@@ -6,8 +6,12 @@
   <table> 
  <thead> 
   <tr>
-     <th>Nom</th>
+     <th>Nombre del paciente</th>
      <th>DNI</th>
+     <th>Médico</th>
+     <th>Fecha de la PCR</th>
+     <th>Sala</th>
+     <th>Resultado</th>
  </tr>
 </thead>
 <tbody>
