@@ -14,22 +14,17 @@
   </select>
   <label>DNI</label>
   <select name="DNI_Pacient" required> 
+  <input name="DNI_Pacient" type="text" maxlenght="30" required> <br>
+  </select>
+  <label>Sala</label>
+  <select name="ID_Sala"required>
   <?php
-  $query = "SELECT * FROM PACIENT ORDER BY DNI";
+  $query = "SELECT * FROM SALA ORDER BY ID";
   $result = mysqli_query($bbdd, $query);
   while($row = mysqli_fetch_assoc($result)){
     echo "<option value=\"$row[DNI]\">$row[DNI] - $row[Nom]<option>";
   }
   ?>
-  </select>
-  <label>Nom del metge</label>
-  <input name="Nom_Metge" type="text" maxlenght="30" required> <br>
-  <label>Sala</label>
-  <select name="ID_Sala">
-  <option value=""selected></option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
   </select>
   <label>Fecha PCR</label>
   <input type="date" name="Fecha_PCR" required>

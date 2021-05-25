@@ -6,8 +6,7 @@
   <table> 
  <thead> 
   <tr>
-     <th>Nombre del paciente</th>
-     <th>DNI</th>
+     <th>DNI Paciente</th>
      <th>Médico</th>
      <th>Fecha de la PCR</th>
      <th>Sala</th>
@@ -20,8 +19,9 @@
     $result = mysqli_query($bbdd, $query);       
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<tr>
-                  <td>$row[Nom]</td>
                   <td>$row[DNI_Pacient]</td>
+                  <td>$row[Nom_Metge]</td>
+                  
               </tr>";
        }
       ?>
