@@ -21,7 +21,9 @@
         echo "<tr>
                   <td>$row[DNI_Pacient]</td>
                   <td>$row[Nom_Metge]</td>
-                  
+                  <td>$row[Data_PCR]</td>
+                  <td>$row[ID_Sala]</td>
+                  <td>$row[Prueba]</td>
               </tr>";
        }
       ?>
