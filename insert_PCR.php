@@ -17,14 +17,11 @@
   <label>Sala</label>
   <select name="ID_Sala"required>
   <option value=""selected></option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
   <?php
   $query = "SELECT * FROM PCR ORDER BY ID";
   $result = mysqli_query($bbdd, $query);
   while($row = mysqli_fetch_assoc($result)){
-    echo "<option value=\"$row[Nom_Metge]\">$row[Nom_Metge] - $row[ID_Sala]<option>";
+    echo "<option value=\"$row[ID_Sala]\">$row[ID_Sala] - $row[Nom_Metge]<option>";
   }
   ?>
   </select>
