@@ -9,6 +9,7 @@ $bbdd=mysqli_connect($database,$user,$pass,$name);
         print(mysqli_connect_error());
         exit();
     }
+
     /*$result=mysqli_query($bbdd,$query);
     if(!$result){
     echo "error query";

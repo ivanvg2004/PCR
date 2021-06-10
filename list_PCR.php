@@ -3,7 +3,7 @@
 <body>
   <h1>Llista de PCR fetes</h1>
   <?php require"incloudes/header.php";?>
-  <table> 
+<table> 
  <thead> 
   <tr>
      <th>DNI Paciente</th>
@@ -15,6 +15,7 @@
 </thead>
 <tbody>
 <?php
+require "incloudes/mysql.php";
     $query = "SELECT * FROM COVID";
     $result = mysqli_query($bbdd, $query);       
     while ($row = mysqli_fetch_assoc($result)) {

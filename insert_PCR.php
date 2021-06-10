@@ -15,13 +15,13 @@
   <label>DNI</label>
   <input name="DNI_Pacient" type="text" maxlenght="30" required> <br>
   <label>Sala</label>
-  <select name="ID_Sala"required>
+  <select name="ID_Sala" required>
   <option value=""selected></option>
   <?php
-  $query = "SELECT * FROM PCR ORDER BY ID";
+  $query = "SELECT * FROM SALA ORDER BY ID" AND "SELECT * FROM METGE ORDER BY DNI";
   $result = mysqli_query($bbdd, $query);
   while($row = mysqli_fetch_assoc($result)){
-    echo "<option value=\"$row[ID_Sala]\">$row[ID_Sala] - $row[Nom_Metge]<option>";
+    echo "<option value=\"$row[ID]\", \"$row[Nom]\">$row[ID] - $row[Nom]<option>";
   }
   ?>
   </select>
