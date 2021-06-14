@@ -10,7 +10,7 @@
      <th>Médico</th>
      <th>Fecha de la PCR</th>
      <th>Sala</th>
-     <th>Resultado</th>
+     <th>Prueba</th>
  </tr>
 </thead>
 <tbody>

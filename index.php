@@ -1,3 +1,4 @@
+<?php require "incloudes/mysql.php";?>
 <!DOCTYPE html>
 <html> 
 <?php require"incloudes/head.php";?>

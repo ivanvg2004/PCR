@@ -14,7 +14,7 @@
   </select>
   <label>DNI</label>
   <input name="DNI_Pacient" type="text" maxlenght="30" required> <br>
-  <label>Sala</label>
+  <label>Sala i Metge</label>
   <select name="ID_Sala" required>
   <option value=""selected></option>
   <?php
