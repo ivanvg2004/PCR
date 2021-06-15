@@ -4,3 +4,5 @@
 <a href="list_PCR.php">PCR realizadas</a>
 <a href="insert_pacient.php">Insertar Pacient</a>
 <a href="list_pacient.php">Llista Pacient</a>
+<a href="insert_metge.php">Insertar Metge</a>
+<a href="list_metge.php">Llista Metge</a>
