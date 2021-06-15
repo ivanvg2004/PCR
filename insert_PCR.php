@@ -1,9 +1,10 @@
+<center>
 <!DOCTYPE html>
 <html>
-  <body>
-  <h1>Insertar pacient</h1>
+  <?php require "incloudes/head.php";?>
   <?php require "incloudes/header.php";?>
-  <?php require "incloudes/mysql.php";?>
+  <body>
+  <h1>Insertar PCR</h1>
   <form action="insert_api_PCR.php" method="GET">
   <div>
   <label>Prueba</label>
@@ -32,3 +33,4 @@
   </form>
   </body>
 </html>
+<center>

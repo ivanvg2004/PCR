@@ -1,8 +1,11 @@
+<center>
+  <?php require"incloudes/header.php";?>
+  <?php require "incloudes/head.php";?>
 <!DOCTYPE html>
 <html>
 <body>
   <h1>Llista de PCR fetes</h1>
-  <?php require"incloudes/header.php";?>
+
 <table> 
  <thead> 
   <tr>
@@ -32,3 +35,4 @@ require "incloudes/mysql.php";
 </table>
 </body>
 </html>
+</center>
