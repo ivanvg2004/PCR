@@ -1,11 +1,11 @@
 <?php
 require "incloudes/mysql.php";
 echo "<p> ID:". $_POST["ID"] . "</p>";
-echo "<p> Nom:" . $_POST["Nom"] . "</p>";
-echo "<p> Llinatges:" . $_POST["Llinatges"] . "</p>";
+echo "<p> Tamany:" . $_POST["Tamany"] . "</p>";
+echo "<p> Ubicació:" . $_POST["Ubicació"] . "</p>";
 
-$query="INSERT INTO pacient (DNI, Nom, Llinatges, HistorialMedic, Email, Pais, Poblacio, Edat, CodiPostal)
-        VALUES(\"$_POST[DNI]\",\"$_POST[Nom]\",\"$_POST[Llinatges]\",\"$_POST[HistorialMedic]\",\"$_POST[Email]\",\"$_POST[Pais]\",\"$_POST[Poblacio]\",\"$_POST[Edat]\",\"$_POST[CodiPostal]\");";
+$query="INSERT INTO sala (ID, Tamany, Ubicació)
+        VALUES(\"$_POST[ID]\",\"$_POST[Tamany]\",\"$_POST[Ubicació]\");";
         echo $query;
         $result=mysqli_query($bbdd,$query);
         if(!$result){
