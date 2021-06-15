@@ -6,12 +6,12 @@
 <title>COVID</title>
 <body>
 
-    <h2> Llista dels pacients insertats</h2>
+    <h2> Llista dels metges insertats</h2>
 
 <body>
    
    </body>
-   <form action="list_pacient.php" method="GET">
+   <form action="list_metge.php" method="GET">
     <select name="AnyQuanComença">
     <option value="">  </option>
    <?php
@@ -24,7 +24,7 @@
     ?>
     </select>
     <button type="submit"> Filtrar </button>
-<button><a href="list_pacient.php">Reset</a></button>
+<button><a href="list_metge.php">Reset</a></button>
     </form>
     <HR WIDTH=0% SIZE=0 />
 
@@ -34,12 +34,10 @@
    <th>DNI</th>
    <th>Nom</th>
    <th>Llinatges</th>
-   <th>HistorialMedic</th>
-   <th>Email</th>
-   <th>Pais</th>
-   <th>Poblacio</th>
+   <th>AnyQuanComença</th>
    <th>Edat</th>
-   <th>CodiPostal</th>
+   <th>Email</th>
+   <th>Estudis</th>
   </tr>
   </thead>
    <tbody>
@@ -49,21 +47,19 @@
       if (isset($_GET["AnyQuanComença"])) {
           $where = " WHERE AnyQuanComença = \"$_GET[AnyQuanComença]\" ";
       }
-      $query = "SELECT * FROM pacient $where ORDER BY Nom";
+      $query = "SELECT * FROM metge $where ORDER BY Nom";
       $result = mysqli_query($bbdd, $query);
       while ($row = mysqli_fetch_assoc($result)) {
          echo "<tr>
                   <td>$row[DNI]</td>
                   <td>$row[Nom]</td>
                   <td>$row[Llinatges]</td>
-                  <td>$row[HistorialMedic]</td>
-                  <td>$row[Email]</td>
-                  <td>$row[Pais]</td>
-                  <td>$row[Poblacio]</td>
+                  <td>$row[AnyQuanComença]</td>
                   <td>$row[Edat]</td>
-                  <td>$row[CodiPostal]</td>
-                  <td><button><a href=\"delete_api_pacient.php?DNI=$row[DNI]\">Eliminar</a></button>
-                  <button><a href=\"insert_pacient.php?DNI_pacient=$row[DNI]\"> Editar</a></button></td>
+                  <td>$row[Email]</td>
+                  <td>$row[Estudis]</td>
+                  <td><button><a href=\"delete_api_metge.php?DNI=$row[DNI]\">Eliminar</a></button>
+                  <button><a href=\"insert_metge.php?DNI_Metge=$row[DNI]\"> Editar</a></button></td>
                </tr>";
       }
       ?>

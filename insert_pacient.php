@@ -6,7 +6,7 @@
 <title>COVID</title>
 
 <body>
-    <h2>Insertar Pacients consultats</h2>
+    <h2>Insertar pacients consultats</h2>
     <?php
     #Insertam les dades a editar
     $DNI_Pacient = '';
