@@ -1,8 +1,8 @@
 <?php 
     require "incloudes/mysql.php";
     $query="UPDATE sala
-    SET ID = \"$_POST[ID]\", 
-    Tamany = \"$_POST[Tamany]\", CP = \"$_POST[Ubicació]\";";
+    SET Tamany = \"$_POST[Tamany]\", Ubicació = \"$_POST[Ubicació]\"
+    WHERE ID = \"$_GET[id]\";";
     echo $query;
     $result = mysqli_query($bbdd, $query);
     if(!$result){

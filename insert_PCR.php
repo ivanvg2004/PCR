@@ -19,7 +19,7 @@
         $pcr = mysqli_fetch_assoc($result);
 
         if ($pcr["ID"]) {
-          $Resultat = $pcr["Positiu"];
+            $ID = $pcr["ID"];
             $Resultat = $pcr["Positiu"];
             $DataPCR = $pcr["DataPCR"];
             $DNI_Pacient = $pcr["DNI_Pacient"];

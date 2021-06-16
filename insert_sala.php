@@ -7,7 +7,7 @@
 <body>
     <h2>Insertar sales</h2>
     <?php
-    $ID_Sala = '';
+    $ID = '';
     $Tamany = '';
     $Ubicació = '';
     if (isset($_GET['ID'])) {
@@ -16,6 +16,7 @@
         $sala = mysqli_fetch_assoc($result);
 
         if ($sala["ID"]) {
+            $ID = $sala["ID"];
             $Tamany = $sala["Tamany"];
             $Ubicació = $sala["Ubicació"];
             
@@ -24,15 +25,15 @@
         ?>
     <div>
          <?php
-         if ($ID_Sala) {
-                echo '<h2> Actualitzant la sala amb ID: ' . $ID_Sala . '</h2>';
+         if ($ID) {
+                echo '<h2> Actualitzant la sala amb ID: ' . $ID . '</h2>';
           } else {
                  echo '<h3> Inserta una nova sala: </h3>';
           }
             ?>
     </div>
 
-        <form class="box"  action="<?= ($ID_Sala) ? "update_api_sala.php?id=$ID_Sala" : 'insert_api_sala.php' ?>" method="post" enctype="multipart/form-data">
+        <form class="box"  action="<?= ($ID) ? "update_api_sala.php?id=$ID" : 'insert_api_sala.php' ?>" method="post" enctype="multipart/form-data">
 
 
 
