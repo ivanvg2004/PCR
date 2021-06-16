@@ -43,7 +43,6 @@
   </thead>
    <tbody>
       <?php
-      // Ficam les dades a la taula
       $where= "";
       if (isset($_GET["Poblacio"])) {
           $where = " WHERE Poblacio = \"$_GET[Poblacio]\" ";

@@ -7,7 +7,6 @@
 <body>
     <h2>Insertar metges a la plantilla</h2>
     <?php
-    #Insertam les dades a editar
     $DNI_Metge = '';
     $Nom = '';
     $Llinatges = '';
@@ -29,15 +28,13 @@
             $Edat = $metge["Edat"];
             $Email = $metge["Email"];
             $Estudis = $metge["Estudis"];
-            $Imatge = $metge["Imatge"];
         }
     }
         ?>
     <div>
          <?php
-            //Feim el formulari
          if ($DNI_Metge) {
-                echo '<h2> Actualitzant el meteg amb DNI: ' . $DNI_Metge . '</h2>';
+                echo '<h2> Actualitzant el metge amb DNI: ' . $DNI_Metge . '</h2>';
           } else {
                  echo '<h3> Inserta un nou metge: </h3>';
           }

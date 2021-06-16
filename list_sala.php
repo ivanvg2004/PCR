@@ -14,7 +14,6 @@
     <select name="Ubicació">
     <option value="">  </option>
    <?php
-   //Feim el filtre
         $query="SELECT DISTINCT Ubicació FROM sala ORDER BY Ubicació;";
     $result=mysqli_query($bbdd, $query);
     while ($row= mysqli_fetch_assoc($result)) {
@@ -37,7 +36,6 @@
   </thead>
    <tbody>
       <?php
-      // Ficam les dades a la taula
       $where= "";
       if (isset($_GET["Ubicació"])) {
           $where = " WHERE Ubicació = \"$_GET[Ubicació]\" ";

@@ -7,7 +7,6 @@
 <body>
     <h2>Insertar pacients consultats</h2>
     <?php
-    #Insertam les dades a editar
     $DNI_Pacient = '';
     $Nom = '';
     $Llinatges = '';
@@ -37,7 +36,6 @@
         ?>
     <div>
          <?php
-            //Feim el formulari
          if ($DNI_Pacient) {
                 echo '<h2> Actualitzant el pacient amb DNI: ' . $DNI_Pacient . '</h2>';
           } else {

@@ -41,7 +41,6 @@
   </thead>
    <tbody>
       <?php
-      // Ficam les dades a la taula
       $where= "";
       if (isset($_GET["AnyQuanComença"])) {
           $where = " WHERE AnyQuanComença = \"$_GET[AnyQuanComença]\" ";

@@ -7,7 +7,6 @@
 <body>
     <h2>Insertar sales</h2>
     <?php
-    #Insertam les dades a editar
     $ID_Sala = '';
     $Tamany = '';
     $Ubicació = '';
@@ -25,7 +24,6 @@
         ?>
     <div>
          <?php
-            //Feim el formulari
          if ($ID_Sala) {
                 echo '<h2> Actualitzant la sala amb ID: ' . $ID_Sala . '</h2>';
           } else {

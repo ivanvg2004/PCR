@@ -5,9 +5,8 @@
 <title>COVID</title>
 
 <body>
-    <h2>Insertar pacients consultats</h2>
+    <h2>Insertar PCR realitzada</h2>
     <?php
-    #Insertam les dades a editar
     $ID = '';
     $Resultat = '';
     $DataPCR = '';
@@ -20,6 +19,7 @@
         $pcr = mysqli_fetch_assoc($result);
 
         if ($pcr["ID"]) {
+          $Resultat = $pcr["Positiu"];
             $Resultat = $pcr["Positiu"];
             $DataPCR = $pcr["DataPCR"];
             $DNI_Pacient = $pcr["DNI_Pacient"];
@@ -30,11 +30,10 @@
         ?>
     <div>
          <?php
-            //Feim el formulari
          if ($ID) {
                 echo '<h2> Actualitzant la PCR amb ID: ' . $ID . '</h2>';
           } else {
-                 echo '<h3> Editar la prova: </h3>';
+                 echo '<h3> Insertar una nova PCR: </h3>';
           }
             ?>
     </div>
