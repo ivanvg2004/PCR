@@ -2,7 +2,6 @@
 <!DOCTYPE html>
     <html>
 <?php require "incloudes/head.php";?>
-<?php require "incloudes/header.php";?>
 <title>COVID</title>
 <body>
 
@@ -51,7 +50,7 @@
                   <td>$row[Tamany]</td>
                   <td>$row[Ubicació]</td>
                   <td><button><a href=\"delete_api_sala.php?ID=$row[ID]\">Eliminar</a></button>
-                  <button><a href=\"insert_sala.php?ID_Sala=$row[ID]\"> Editar</a></button></td>
+                  <button><a href=\"insert_sala.php?ID=$row[ID]\"> Editar</a></button></td>
                </tr>";
       }
       ?>

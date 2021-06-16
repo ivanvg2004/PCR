@@ -1,15 +1,13 @@
 <?php
 require "incloudes/mysql.php";
-echo "<p> ID:". $_POST["ID"] . "</p>";
-echo "<p> Tamany:" . $_POST["Tamany"] . "</p>";
-echo "<p> Ubicació:" . $_POST["Ubicació"] . "</p>";
-
-$query="INSERT INTO sala (ID, Tamany, Ubicació)
-        VALUES(\"$_POST[ID]\",\"$_POST[Tamany]\",\"$_POST[Ubicació]\");";
+$query="INSERT INTO sala (Tamany, Ubicació)
+        VALUES(\"$_POST[Tamany]\",\"$_POST[Ubicació]\");";
         echo $query;
         $result=mysqli_query($bbdd,$query);
         if(!$result){
-        echo "error query";
-        print(mysqli_error($bbdd));
-        }
+                $error = (mysqli_error($bbdd));
+                header('Location: error.php?error=' . $error);
+            }else{
+                header('Location: insert_sala.php');
+            }
 ?>

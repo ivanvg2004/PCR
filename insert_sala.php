@@ -1,7 +1,6 @@
 <center>
 <!Doctype html>
 <html>
-<?php require "incloudes/header.php";?>
 <?php require "incloudes/head.php";?>
 <title>COVID</title>
 
@@ -17,8 +16,7 @@
         $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
         $sala = mysqli_fetch_assoc($result);
 
-        if ($sala["DNI"]) {
-            $ID_Sala = $sala["ID"];
+        if ($sala["ID"]) {
             $Tamany = $sala["Tamany"];
             $Ubicació = $sala["Ubicació"];
             
@@ -38,9 +36,7 @@
 
         <form class="box"  action="<?= ($ID_Sala) ? "update_api_sala.php?id=$ID_Sala" : 'insert_api_sala.php' ?>" method="post" enctype="multipart/form-data">
 
-            <div>
-            <input type="text" maxlength="9" placeholder="ID" required minlenghth="2" name="ID" value="<?=$ID_Sala?>">
-            </div>
+
 
             <div>
             <input type="text" max="255" placeholder="Tamany" required min="1" name="Tamany" value="<?=$Tamany?>">

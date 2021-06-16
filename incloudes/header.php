@@ -1,10 +1,23 @@
+<nav id="menu">
+    <ul>
+ <li><a href="index.php">Index</a></li>
 
-<a href="index.php"> Índice </a>
-<a href="insert_PCR.php"> Insertar PCR del Paciente </a>
-<a href="list_PCR.php">PCR realizadas</a>
-<a href="insert_pacient.php">Insertar Pacient</a>
-<a href="list_pacient.php">Llista Pacients</a>
-<a href="insert_metge.php">Insertar Metge</a>
-<a href="list_metge.php">Llista Metges</a>
-<a href="insert_sala.php">Insertar Sala</a>
-<a href="list_sala.php">Llista Sales</a>
+ <li><a href="#">Insertar</a>
+
+ <ul>
+ <li><a href="insert_metge.php"> Metge</a></li>
+ <li><a href="insert_pacient.php"> Pacient</a></li>
+ <li><a href="insert_Sala.php">Sala</a></li>
+ <li><a href="insert_PCR.php">PCR</a></li>
+ </ul>
+
+ <li><a href="#">Listas</a>
+
+<ul>
+<li><a href="list_metge.php">Metge</a></li>
+<li><a href="list_pacient.php">Pacient</a></li>
+<li><a href="list_sala.php">Sala</a></li>
+<li><a href="list_PCR.php">PCR</a></li>
+</ul>
+</nav>
+<HR WIDTH=0% SIZE=0 />

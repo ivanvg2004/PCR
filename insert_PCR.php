@@ -1,36 +1,116 @@
 <center>
-<!DOCTYPE html>
+<!Doctype html>
 <html>
-  <?php require "incloudes/head.php";?>
-  <?php require "incloudes/header.php";?>
-  <body>
-  <h1>Insertar PCR</h1>
-  <form action="insert_api_PCR.php" method="GET">
-  <div>
-  <label>Prueba</label>
-  <select name="Prueba" required>
-  <option value=""selected></option>
-  <option value="1">Positivo</option>
-  <option value="0">Negativo</option>
-  </select>
-  <label>DNI</label>
-  <input name="DNI_Pacient" type="text" maxlenght="30" required> <br>
-  <label>Sala i Metge</label>
-  <select name="ID_Sala" required>
-  <option value=""selected></option>
-  <?php
-  $query = "SELECT * FROM SALA ORDER BY ID" AND "SELECT * FROM METGE ORDER BY DNI";
-  $result = mysqli_query($bbdd, $query);
-  while($row = mysqli_fetch_assoc($result)){
-    echo "<option value=\"$row[ID]\", \"$row[Nom]\">$row[ID] - $row[Nom]<option>";
-  }
-  ?>
-  </select>
-  <label>Fecha PCR</label>
-  <input type="date" name="Fecha_PCR" required>
-  <button type="submit">Enviar</button>
-  </div>
-  </form>
-  </body>
+<?php require "incloudes/head.php";?>
+<title>COVID</title>
+
+<body>
+    <h2>Insertar pacients consultats</h2>
+    <?php
+    #Insertam les dades a editar
+    $ID = '';
+    $Resultat = '';
+    $DataPCR = '';
+    $DNI_Pacient = '';
+    $DNI_Metge = '';
+    $ID_Sala = '';
+    if (isset($_GET['ID'])) {
+        $query = "SELECT * FROM pcr WHERE ID = \"$_GET[ID]\";";
+        $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
+        $pcr = mysqli_fetch_assoc($result);
+
+        if ($pcr["ID"]) {
+            $Resultat = $pcr["Positiu"];
+            $DataPCR = $pcr["DataPCR"];
+            $DNI_Pacient = $pcr["DNI_Pacient"];
+            $DNI_Metge = $pcr["DNI_Metge"];
+            $ID_Sala = $pcr["ID_Sala"];
+        }
+    }
+        ?>
+    <div>
+         <?php
+            //Feim el formulari
+         if ($ID) {
+                echo '<h2> Actualitzant la PCR amb ID: ' . $ID . '</h2>';
+          } else {
+                 echo '<h3> Editar la prova: </h3>';
+          }
+            ?>
+    </div>
+
+        <form class="box"  action="<?= ($ID) ? "update_api_pcr.php?id=$ID" : 'insert_api_pcr.php' ?>" method="post" enctype="multipart/form-data">
+            <div>
+            <input type="text" max="255" placeholder="Resultat" required min="1" name="Positiu" value="<?=$Resultat?>">
+            </div>
+            <label>Data de la realització de la prova</label>
+            <div>
+            <input type="date" placeholder="Data de la realització de la prova" name="DataPCR" value="<?=$DataPCR?>">
+            </div>
+
+            <div>
+            <label>DNI de el pacient</label>
+            <select name="DNI_Pacient" required>
+            <option value=""></option>
+            <?php
+            $query = "SELECT DNI, Nom from pacient;";
+            $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
+            while ($pacient = mysqli_fetch_assoc($result)) {
+                $selected = '';
+                if ($pacient['DNI'] == $DNI_Pacient) {
+                    $selected = 'selected';
+                }
+                echo "<option $selected value=\"$pacient[DNI]\">$pacient[Nom]</option>";
+            }
+            ?>           
+            </div>
+            </select>
+
+            <div>
+            <label>DNI de el metge</label>
+            <select name="DNI_Metge" required>
+            <option value=""></option>
+            <?php
+            $query = "SELECT DNI, Nom from metge;";
+            $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
+            while ($metge = mysqli_fetch_assoc($result)) {
+                $selected = '';
+                if ($metge['DNI'] == $DNI_Metge) {
+                    $selected = 'selected';
+                }
+                echo "<option $selected value=\"$metge[DNI]\">$metge[Nom]</option>";
+            }
+            ?>         
+            </div>
+          </select>
+            <div>
+            <label>ID de la Sala</label>
+            <select name="ID_Sala" required>
+            <option value=""></option>
+            <?php
+            $query = "SELECT ID from sala;";
+            $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
+            while ($sala = mysqli_fetch_assoc($result)) {
+                $selected = '';
+                if ($sala['ID'] == $ID_Sala) {
+                    $selected = 'selected';
+                }
+                echo "<option $selected value=\"$sala[ID]\">$sala[ID]</option>";
+            }
+            ?>
+            </div>
+            </select>
+
+    <div>
+    <input type="reset">
+    </div>
+
+    <div>
+    <input type="submit" value="Enviar">
+    </div>
+
+    </form>
+</body>
+
 </html>
-<center>
+</center>

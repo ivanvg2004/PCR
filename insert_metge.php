@@ -1,7 +1,6 @@
 <center>
 <!Doctype html>
 <html>
-<?php require "incloudes/header.php";?>
 <?php require "incloudes/head.php";?>
 <title>COVID</title>
 
@@ -16,6 +15,7 @@
     $Edat = '';
     $Email = '';
     $Estudis = '';
+    $Imatge = '';
     if (isset($_GET['DNI'])) {
         $query = "SELECT * FROM metge WHERE DNI = \"$_GET[DNI]\";";
         $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
@@ -29,7 +29,7 @@
             $Edat = $metge["Edat"];
             $Email = $metge["Email"];
             $Estudis = $metge["Estudis"];
-           
+            $Imatge = $metge["Imatge"];
         }
     }
         ?>
@@ -73,7 +73,6 @@
             <div>
             <input type="text" maxlength="255" placeholder="Estudis" name="Estudis" requirep value="<?=$Estudis?>">
             </div>
-
 
     <div>
     <input type="reset">

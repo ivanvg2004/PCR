@@ -1,7 +1,6 @@
 <center>
 <!Doctype html>
 <html>
-<?php require "incloudes/header.php";?>
 <?php require "incloudes/head.php";?>
 <title>COVID</title>
 
