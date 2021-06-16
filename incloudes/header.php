@@ -11,7 +11,7 @@
  <li><a href="insert_PCR.php">PCR</a></li>
  </ul>
 
- <li><a href="#">Listas</a>
+ <li><a href="#">Llistes</a>
 
 <ul>
 <li><a href="list_metge.php">Metge</a></li>
